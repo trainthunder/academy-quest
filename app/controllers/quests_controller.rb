@@ -1,4 +1,5 @@
 class QuestsController < ApplicationController
+  before_action :set_quest, only: [ :destroy ]
   def index
     @quests = Quest.order(created_at: :desc)
     @quest = Quest.new
@@ -9,7 +10,6 @@ class QuestsController < ApplicationController
     if @quest.save
       respond_to do |format|
         format.turbo_stream
-        # format.html { redirect_to quests_path }
         redirect_to quests_path
       end
     else
@@ -17,7 +17,19 @@ class QuestsController < ApplicationController
     end
   end
 
+  def destroy
+    @quest.destroy
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to quests_path }
+    end
+  end
+
   private
+  def set_quest
+    @quest = Quest.find(params[:id])
+  end
+
   def quest_params
     params.require(:quest).permit(:title, :status)
   end

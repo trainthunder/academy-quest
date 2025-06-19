@@ -20,4 +20,13 @@ RSpec.describe "Quests", type: :request do
       }.to change(Quest, :count).by(1)
     end
   end
+
+  describe "DELETE /quests/:id" do
+    it "can delete quest" do
+      quest = Quest.create!(title: "Ruby 101", status: false)
+      expect {
+        delete quest_path(quest)
+      }.to change(Quest, :count).by(-1)
+    end
+  end
 end
