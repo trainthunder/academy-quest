@@ -1,4 +1,4 @@
 class PagesController < ApplicationController
-  def brag_doc
+  def index
   end
 end

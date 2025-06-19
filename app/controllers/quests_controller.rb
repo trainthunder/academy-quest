@@ -10,7 +10,7 @@ class QuestsController < ApplicationController
     if @quest.save
       respond_to do |format|
         format.turbo_stream
-        redirect_to quests_path
+        format.html { redirect_to quests_path }
       end
     else
       render :new

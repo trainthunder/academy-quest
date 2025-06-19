@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :quests
-  get "brag_doc", to: "pages#brag_doc", as: "brag_document"
+  # get "brag_doc", to: "pages#brag_doc", as: "brag_document"
+  resources :pages
   root "quests#index"
 end

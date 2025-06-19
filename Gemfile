@@ -54,6 +54,12 @@ group :development, :test do
 
   # RSpec Rails
   gem "rspec-rails"
+
+  # Cucumber Rails
+  gem "cucumber-rails", require: false
+  gem "database_cleaner-active_record"
+
+  gem "simplecov"
 end
 
 group :development do
