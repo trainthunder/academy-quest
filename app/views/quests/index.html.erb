@@ -6,14 +6,18 @@
         <span class="font-extrabold text-3xl sm:text-6xl md:text-5xl lg:text-6xl">My Academy Quest</span>
         <span class="font-light text-2xl sm:text-4xl">Kitikun Polgarn</span>
       </div>
-      <div class="hidden md:flex bg-linear-to-r from-yellow-400 via-orange-500 to-yellow-600 p-3 rounded-lg items-center justify-center max-w-50" data-testid:"my-brag-doc-desktop-button">
-        <span class="text-gray-800 font-bold">My Brag Document</span>
-      </div>
+      <%= link_to brag_document_path, class:"max-w-50" do%>
+        <div class="hidden md:flex bg-linear-to-r from-yellow-400 via-orange-500 to-yellow-600 p-3 rounded-lg items-center justify-center" data-testid:"my-brag-doc-desktop-button">
+          <span class="text-gray-800 font-bold">My Brag Document</span>
+        </div>
+      <% end %>
     </div>
     <%= image_tag "train-photo.JPG", class:"w-full max-w-sm sm:max-w-md md:max-w-sm rounded-2xl"%>
-    <div class="md:hidden bg-linear-to-r from-yellow-400 via-orange-500 to-yellow-600 p-3 rounded-lg flex items-center justify-center" data-testid:"my-brag-doc-desktop-mobile">
-      <span class="text-gray-800 font-bold">My Brag Document</span>
-    </div>
+    <%= link_to brag_document_path, class:"md:hidden" do%>
+      <div class="bg-linear-to-r from-yellow-400 via-orange-500 to-yellow-600 p-3 rounded-lg flex items-center justify-center" data-testid:"my-brag-doc-desktop-mobile">
+        <span class="text-gray-800 font-bold">My Brag Document</span>
+      </div>
+    <% end %>
   </div>
   <%# info part end %>
   <%# quest part start %>
