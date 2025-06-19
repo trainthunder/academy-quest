@@ -1,0 +1,52 @@
+<div class="w-full max-w-6xl flex flex-col gap-6">
+  <%# info part start %>
+  <div class="flex flex-col items-center md:flex-row md:items-start md:justify-between gap-6 md:gap-0 p-5 md:p-6 lg:p-14 bg-linear-to-r from-cyan-100 via-blue-300 to-indigo-400 rounded-2xl">
+    <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-4">
+        <span class="font-extrabold text-3xl sm:text-6xl md:text-5xl lg:text-6xl">My Academy Quest</span>
+        <span class="font-light text-2xl sm:text-4xl">Kitikun Polgarn</span>
+      </div>
+      <div class="hidden md:flex bg-linear-to-r from-yellow-400 via-orange-500 to-yellow-600 p-3 rounded-lg items-center justify-center max-w-50" data-testid:"my-brag-doc-desktop-button">
+        <span class="text-gray-800 font-bold">My Brag Document</span>
+      </div>
+    </div>
+    <%= image_tag "train-photo.JPG", class:"w-full max-w-sm sm:max-w-md md:max-w-sm rounded-2xl"%>
+    <div class="md:hidden bg-linear-to-r from-yellow-400 via-orange-500 to-yellow-600 p-3 rounded-lg flex items-center justify-center" data-testid:"my-brag-doc-desktop-mobile">
+      <span class="text-gray-800 font-bold">My Brag Document</span>
+    </div>
+  </div>
+  <%# info part end %>
+  <%# quest part start %>
+  <div class="flex flex-col items-center p-5 md:p-6 lg:p-14 bg-linear-to-r from-cyan-400 via-blue-400 to-indigo-400 rounded-2xl">
+    <div class="w-full flex flex-col gap-6 items-center justify-between mb-6">
+      <span class="text-gray-800 font-bold text-xl md:text-2xl">My Quest List</span>
+      <%# create quest part start %>
+      <div class="w-full flex flex-col md:flex-row md:justify-center gap-4">
+        <input type="text" class="bg-white p-2 md:w-md lg:w-2xl rounded-lg outline-none" placeholder="Enter your quest">
+        <div class="bg-linear-to-r from-orange-600 via-amber-900 to-amber-950 p-2 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold">Create Quest</span>
+        </div>
+      </div>
+      <%# create quest part end %>
+    </div>
+    <div class="p-3 bg-white w-full rounded-lg flex flex-col shadow-xl gap-6">
+      <%# quest list part start %>
+      <div class="flex flex-col sm:flex-row gap-3 items-center justify-between">
+        <div class="flex gap-3 sm:items-center">
+          <input type="checkbox" class="size-6">
+          <span class="text-base font-light w-full">First Day at TIPCO! Setup Macbooks and everything up!
+            setup friendslog, basecamp, Tipco'card, door auth and necessary things required at odds
+          </span>
+        </div>
+        <div class="w-full sm:max-w-30 p-2 bg-linear-to-r from-rose-500 via-pink-500 to-red-500 rounded-xl flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+          </svg>
+          <span class="text-base text-white font-semibold">Delete</span>
+        </div>
+      </div>
+      <%# quest list part end %>
+    </div>
+  </div>
+  <%# quest part end %>
+</div>
