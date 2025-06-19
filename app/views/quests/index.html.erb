@@ -29,7 +29,9 @@
       <span class="text-gray-800 font-bold text-xl md:text-2xl" data-test-id="quest-list-title">My Quest List</span>
       <%# create quest part start %>
       <div data-test-id="create-quest-form">
-        <%= render "form" %>
+        <%= turbo_frame_tag "new_quest" do %>
+          <%= render "form", quest: @quest %>
+        <% end %>
       </div>
       <%# create quest part end %>
     </div>

@@ -1,11 +1,13 @@
-<%= form_with model: @quest, class: "w-full" do |form| %>
-  <div class="flex flex-col md:flex-row md:justify-center gap-4">
-    <%= form.text_field :title,
-          required: true,
-          class: "bg-white p-2 md:w-md lg:w-2xl rounded-lg outline-none",
-          data: { test_id: "quest-title-input" } %>
-    <%= form.submit "Create Quest",
-          class: "bg-linear-to-r from-orange-600 via-amber-900 to-amber-950 p-2 rounded-lg flex items-center justify-center text-white font-bold",
-          data: { test_id: "create-quest-button" } %>
-  </div>
+<%= turbo_frame_tag "new_quest" do %>
+  <%= form_with model: quest, class: "w-full", local: false do |form| %>
+    <div class="flex flex-col md:flex-row md:justify-center gap-4">
+      <%= form.text_field :title,
+            required: true,
+            class: "bg-white p-2 md:w-md lg:w-2xl rounded-lg outline-none",
+            data: { test_id: "quest-title-input" } %>
+      <%= form.submit "Create Quest",
+            class: "bg-linear-to-r from-orange-600 via-amber-900 to-amber-950 p-2 rounded-lg flex items-center justify-center text-white font-bold",
+            data: { test_id: "create-quest-button" } %>
+    </div>
+  <% end %>
 <% end %>
