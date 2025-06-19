@@ -1,5 +1,5 @@
 class QuestsController < ApplicationController
-  before_action :set_quest, only: [ :destroy ]
+  before_action :set_quest, only: [ :destroy, :update ]
   def index
     @quests = Quest.order(created_at: :desc)
     @quest = Quest.new
@@ -19,6 +19,14 @@ class QuestsController < ApplicationController
 
   def destroy
     @quest.destroy
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to quests_path }
+    end
+  end
+
+  def update
+    @quest.update(status: !@quest.status)
     respond_to do |format|
       format.turbo_stream
       format.html { redirect_to quests_path }

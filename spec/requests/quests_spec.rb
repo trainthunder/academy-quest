@@ -29,4 +29,13 @@ RSpec.describe "Quests", type: :request do
       }.to change(Quest, :count).by(-1)
     end
   end
+
+  describe "PATCH /quests/:id" do
+    it "can toggle to change status quest" do
+      quest = Quest.create!(title: "Tailwind 101", status: false)
+      patch quest_path(quest)
+      quest.reload
+      expect(quest.status).to eq(true)
+    end
+  end
 end
